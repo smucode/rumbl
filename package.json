@@ -9,7 +9,8 @@
     "ecto:gen": "mix ecto.gen.migration create_user",
     "ecto:mig": "mix ecto.migrate",
     "iex": "iex -S mix",
-    "mix:routes": "mix phoenix.routes"
+    "mix:routes": "mix phoenix.routes",
+    "mix:deps": "mix deps.get"
   },
   "dependencies": {
     "phoenix": "file:deps/phoenix",
