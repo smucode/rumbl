@@ -17,7 +17,7 @@ defmodule Rumbl.SessionController do
         conn
         |> put_flash(:info, "Welcome back!")
         |> redirect(to: page_path(conn, :index))
-      {:error, reason, conn} ->
+      {:error, _, conn} ->
         conn
         |> put_flash(:error, "Invalid user/pass combo")
         |> render("new.html")
