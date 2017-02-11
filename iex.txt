@@ -1,0 +1,21 @@
+iex -S mix
+
+alias Rumbl.Category
+alias Rumbl.User
+alias Rumbl.Video
+alias Rumbl.Repo
+import Ecto.Query
+
+
+# update category
+cat = Repo.get_by Category, name: "Drama"
+video = Repo.one(from v in Video, limit: 1)
+changeset = Video.changeset(video, %{category_id: cat.id})
+Repo.update(changeset)
+
+# update category, should fail
+changeset = Video.changeset(video, %{category_id: 12345})
+Repo.update(changeset)
+
+# nuke a cat
+Repo.delete cat

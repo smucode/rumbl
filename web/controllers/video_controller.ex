@@ -3,6 +3,7 @@ defmodule Rumbl.VideoController do
 
   alias Rumbl.Video
   alias Rumbl.Category
+  require Logger
 
   plug :load_categories when action in [:new, :create, :edit, :update]
 
@@ -38,6 +39,8 @@ defmodule Rumbl.VideoController do
 
   def create(conn, %{"video" => video_params}, user) do
     # changeset = Video.changeset(%Video{}, video_params)
+    Logger.info "Var value: #{inspect(video_params)}"
+
     changeset =
       user
       |> build_assoc(:videos)
