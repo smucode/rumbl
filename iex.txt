@@ -6,6 +6,9 @@ alias Rumbl.Video
 alias Rumbl.Repo
 import Ecto.Query
 
+#
+# UPDATING RELATINSHIPS
+#
 
 # update category
 cat = Repo.get_by Category, name: "Drama"
