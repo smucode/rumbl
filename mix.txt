@@ -1,0 +1,3 @@
+
+mix ecto.gen.migration add_slug_to_video
+mix ecto.migrate

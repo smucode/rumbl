@@ -22,3 +22,16 @@ Repo.update(changeset)
 
 # nuke a cat
 Repo.delete cat
+
+
+
+
+
+video = %Rumbl.Video{id: 1, slug: "hello"}
+Rumbl.Router.Helpers.watch_path(%URI{}, :show, video)
+
+url = URI.parse("http://foo.com/bar")
+Rumbl.Router.Helpers.watch_path(url, :show, video)
+Rumbl.Router.Helpers.watch_url(url, :show, video)
+
+url = Rumbl.Endpoint.struct_url
